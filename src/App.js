@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Modal } from "react-bootstrap";
+import "./App.css";
+import FrontUI from "./Component/FrontUI";
+import { useState } from "react";
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <FrontUI />
+
+      <div class="attribution">
+        <span
+          className="btn "
+          onClick={() => {
+            setShowModal(true);
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          Click Here
+        </span>
+      </div>
+      <Modal show={showModal} onHide={handleCloseModal} centered>
+        <Modal.Body style={{ textAlign: "center" }}>
+          <p style={{ textAlign: "center" }}>Successfully created</p>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 }

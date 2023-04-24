@@ -1,0 +1,30 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-brand {
+  font-weight: 700;
+}
+
+.nav-item {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+/* .collapse:not(.show) {
+  display: block;
+} */
+
+.container1 {
+  display: flex;
+}
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+}
+
+.navbar-toggler-icon {
+  width: 1.5em;
+  height: 1.5em;
+}

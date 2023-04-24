@@ -1,0 +1,12 @@
+div p {
+  text-align: justify;
+}
+.CardBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CardBtn button {
+  margin: 0 10px;
+}
