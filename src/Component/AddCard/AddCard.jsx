@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import "./AddCard.css";
-import { Modal } from "react-bootstrap";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export default function AddCard() {
   const [count, setCount] = useState(0);
-  const [showModal, setShowModal] = useState(false);
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
 
   const handleIncrement = () => {
     setCount(count + 1);
@@ -22,16 +17,15 @@ export default function AddCard() {
     }
   };
 
-  const handleAddCard = () => {
+  const handleAddCard = (count) => {
     if (count > 0) {
       const totalAmount = count * 349;
-      setShowModal(true);
       console.log(totalAmount);
     } else {
       alert("Select the product");
     }
   };
-
+  const isCountZero = count === 0;
   return (
     <div className="container">
       <div>
@@ -53,16 +47,41 @@ export default function AddCard() {
             +
           </button>
 
-          <button className="btn btn-primary" onClick={handleAddCard}>
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
+            disabled={isCountZero}
+            onClick={() => handleAddCard(count)}
+          >
             Add Card
           </button>
-          <Modal show={showModal} onHide={handleCloseModal} centered>
-            <Modal.Body style={{ textAlign: "center" }}>
-              <p>{count} shoes have been added to your cart.</p>
-              <p>Total amount Rs: {count * 349}</p>
-              <button className="btn btn-success">Click to Pay</button>
-            </Modal.Body>
-          </Modal>
+        </div>
+      </div>
+
+      {/* Offcanvas */}
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 id="offcanvasRightLabel">Shopping Cart</h5>
+          <button
+            type="button"
+            class="btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div className="offcanvas-body">
+          <p>Number of Shoes: {count}</p>
+          <p>Total Amount: {count * 349}</p>
+          <button className="btn btn-success m-2">Pay Now</button>
+          <button className="btn btn-danger">Cancel</button>
         </div>
       </div>
     </div>
