@@ -7,35 +7,35 @@ export default function FrontUI() {
   return (
     <div className="container-fluid">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Sneakers
+        <div className="container">
+          <a className="navbar-brand" href="/">
+            <img src="./images/logo.svg" alt="" />
           </a>
 
           <div className=" navbar-collapse">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" href="#">
+                <a className="nav-link active" href="/">
                   Collections
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link " href="#">
+                <a className="nav-link " href="/">
                   Men
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/">
                   Women
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/">
                   About
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/">
                   Contact
                 </a>
               </li>

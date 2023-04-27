@@ -7,15 +7,6 @@
   font-weight: 700;
 }
 
-.nav-item {
-  margin-right: 10%;
-  margin-left: 10%;
-}
-
-/* .collapse:not(.show) {
-  display: block;
-} */
-
 .container1 {
   display: flex;
 }

@@ -1,34 +1,12 @@
 import React, { useState } from "react";
 import { Carousel, Modal } from "react-bootstrap";
+import images from "./Data";
 
 export default function Slideshow() {
   const [showModal, setShowModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [zoomLevel, setZoomLevel] = useState(1);
-
-  const images = [
-    {
-      id: 1,
-      src: "./images/image-product-1.jpg",
-      alt: "First slide",
-    },
-    {
-      id: 2,
-      src: "./images/image-product-2.jpg",
-      alt: "Second slide",
-    },
-    {
-      id: 3,
-      src: "./images/image-product-3.jpg",
-      alt: "Third slide",
-    },
-    {
-      id: 4,
-      src: "./images/image-product-4.jpg",
-      alt: "Third slide",
-    },
-  ];
 
   const handleImageClick = (image, index) => {
     setSelectedImage(image);
@@ -92,13 +70,28 @@ export default function Slideshow() {
         </div>
       </div>
 
-      <Modal show={showModal} onHide={handleCloseModal} centered>
-        <Modal.Body style={{ overflow: "auto" }}>
+      <Modal
+        show={showModal}
+        onHide={handleCloseModal}
+        centered
+        style={{ width: "80%", borderRadius: "20px" }}
+      >
+        <Modal.Body
+          centered
+          style={{
+            padding: 0,
+            border: 0,
+            borderRadius: "50%",
+          }}
+        >
           <img
-            style={{ maxHeight: `${500 * zoomLevel}px`, maxWidth: "100%" }}
             src={selectedImage?.src}
             alt={selectedImage?.alt}
             onWheel={handleWheel}
+            style={{
+              borderRadius: "20px",
+              width: "120%",
+            }}
           />
         </Modal.Body>
       </Modal>

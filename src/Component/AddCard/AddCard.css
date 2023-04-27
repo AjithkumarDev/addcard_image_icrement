@@ -7,6 +7,95 @@ div p {
   align-items: center;
 }
 
+.btncards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .CardBtn button {
   margin: 0 10px;
+}
+.btn-orange {
+  color: orange;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.btn-colorcard {
+  background-color: rgb(235, 223, 223);
+  padding: 0 15px;
+  margin: 0;
+}
+.btn-Addcard {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.badge {
+  background-color: rgb(240, 235, 226);
+  cursor: pointer;
+}
+.purchaseCheckout {
+  position: fixed;
+}
+
+.offcanvas {
+  width: 25%;
+  height: 40%;
+  position: absolute;
+}
+.offcanvas-header {
+  padding: 0 20px;
+}
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-custom1 {
+  background-color: orange;
+  color: white;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  float: right;
+  padding: 5% 0 1% 0;
+}
+
+.badge-top {
+  color: white;
+  background-color: red;
+  margin-bottom: 10rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.checkoutImage {
+  width: 70px;
+  height: 70px;
+  border-radius: 3px;
+}
+
+.offcanvas_content {
+  display: flex;
+  justify-content: space-between;
+}
+.checkoutdelete {
+  width: 20px;
+  height: 20px;
+  margin: 20px 0 0;
+}
+.image_Avatar {
+  cursor: pointer;
+  float: left;
 }

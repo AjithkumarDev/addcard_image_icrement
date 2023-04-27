@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./AddCard.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "bootstrap/dist/js/bootstrap.bundle";
 
 export default function AddCard() {
   const [count, setCount] = useState(0);
@@ -36,19 +36,39 @@ export default function AddCard() {
           item of decoration and fashion.
         </p>
 
-        <h2>Rs.349/- per shoe</h2>
+        <div>
+          <h2 style={{ fontWeight: "700" }}>
+            $349.00
+            <span
+              style={{
+                color: "darkorange",
+                fontSize: "1.1rem",
+                padding: "5px",
+                margin: "5px",
+              }}
+              className="badge bg-orange"
+            >
+              50%
+            </span>
+          </h2>
+        </div>
+        <div style={{ opacity: "0.3", margin: "0 6rem 1.5rem 0" }}>
+          <s>$250.00 </s>
+        </div>
 
         <div className="CardBtn">
-          <button className="btn btn-danger" onClick={handleDecrement}>
-            -
-          </button>
-          <h3>{count}</h3>
-          <button className="btn btn-primary" onClick={handleIncrement}>
-            +
+          <button className="btn btn-colorcard btn-light btncards ">
+            <span className="btn btn-orange" onClick={handleDecrement}>
+              <img src="./images/icon-minus.svg" alt="No thanks" />
+            </span>
+            <h4>{count}</h4>
+            <span className="btn btn-orange" onClick={handleIncrement}>
+              <img src="./images/icon-plus.svg" alt="No thanks" />
+            </span>
           </button>
 
           <button
-            class="btn btn-primary"
+            class="btn btn-Addcard"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasRight"
@@ -56,32 +76,71 @@ export default function AddCard() {
             disabled={isCountZero}
             onClick={() => handleAddCard(count)}
           >
+            <img
+              src="./images/icon-cart.svg"
+              alt="No thanks"
+              style={{ filter: "invert(100%)" }}
+            />
             Add Card
           </button>
         </div>
       </div>
 
       {/* Offcanvas */}
-      <div
-        class="offcanvas offcanvas-end"
-        tabindex="-1"
-        id="offcanvasRight"
-        aria-labelledby="offcanvasRightLabel"
-      >
-        <div class="offcanvas-header">
-          <h5 id="offcanvasRightLabel">Shopping Cart</h5>
-          <button
-            type="button"
-            class="btn-close text-reset"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div className="offcanvas-body">
-          <p>Number of Shoes: {count}</p>
-          <p>Total Amount: {count * 349}</p>
-          <button className="btn btn-success m-2">Pay Now</button>
-          <button className="btn btn-danger">Cancel</button>
+
+      <div className="CardOffsets ">
+        <div
+          class="offcanvas top-0 end-0 m-3"
+          tabindex="-1"
+          id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel"
+        >
+          <div className=" image-container">
+            <div className="purchaseCheckout">
+              <img
+                style={{ width: "2rem", margin: "0 0rem 0 10rem" }}
+                src="./images/icon-cart.svg"
+                alt="No Img"
+              />
+              <span className="badge  badge-top ">{count}</span>
+            </div>
+            <div>
+              <img
+                className="image_Avatar"
+                style={{ width: "2rem", margin: "0 3rem 0 15rem" }}
+                src="./images/image-avatar.png"
+                alt="No Img"
+              />
+            </div>
+          </div>
+          <hr />
+          <div class="offcanvas-header">
+            <p style={{ fontWeight: "550", margin: "10px" }}>Card</p>
+          </div>
+          <hr />
+          <div className="offcanvas-body  ">
+            <div className="offcanvas_content">
+              <img
+                className="checkoutImage"
+                src="./images/image-product-1-thumbnail.jpg"
+                alt="Nothing to show"
+              />
+              <span>
+                <p className="m-0 ">Fall Limited Edition Sneakers </p>
+                <p>
+                  {`$${349.0}x${count}  `}
+                  <b>{`$${count * 349.0} `} </b>
+                </p>
+              </span>
+              <img
+                className="checkoutdelete"
+                src="./images/icon-delete.svg"
+                alt="Nothing to show"
+              />
+            </div>
+
+            <button className="btn btn-custom1 m-2 col-12">Checkout</button>
+          </div>
         </div>
       </div>
     </div>
