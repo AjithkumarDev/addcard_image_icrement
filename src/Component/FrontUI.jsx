@@ -1,7 +1,7 @@
 import React from "react";
 import "./FrontUI.css";
 import Slideshow from "./SlideShow/Slideshow";
-import AddCard from "./AddCard/AddCard";
+// import AddCard from "./AddCard/AddCard";
 
 export default function FrontUI() {
   return (
